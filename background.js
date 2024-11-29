@@ -12,6 +12,9 @@ chrome.contextMenus.onClicked.addListener((info, tab) => {
   if (info.menuItemId === 'proofreadAI' && info.selectionText) {
     const selectedText = info.selectionText;
     const prompt = `Please proofread the following text and return the corrected version:\n\n${selectedText}`;
+
+    chrome.tabs.sendMessage(tab.id, { type: 'toast', text: 'Processing...', duration: 2000 });
+
     fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-8b:generateContent?key=' + API_KEY, {
       method: 'POST',
       headers: {
@@ -33,7 +36,11 @@ chrome.contextMenus.onClicked.addListener((info, tab) => {
         },
         args: [proofreadText]
       });
+      chrome.tabs.sendMessage(tab.id, { type: 'toast', text: 'Done!', duration: 2000 });
     })
-    .catch(error => console.error('Error:', error));
+    .catch(error => {
+      console.error('Error:', error);
+      chrome.tabs.sendMessage(tab.id, { type: 'toast', text: 'Error occurred!', duration: 3000 });
+    });
   }
 });
