@@ -11,13 +11,14 @@ chrome.runtime.onInstalled.addListener(() => {
 chrome.contextMenus.onClicked.addListener((info, tab) => {
   if (info.menuItemId === 'proofreadAI' && info.selectionText) {
     const selectedText = info.selectionText;
+    const prompt = `Please proofread the following text and return the corrected version:\n\n${selectedText}`;
     fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-8b:generateContent?key=' + API_KEY, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        contents: [{ parts: [{ text: selectedText }] }]
+        contents: [{ parts: [{ text: prompt }] }]
       })
     })
     .then(response => response.json())
