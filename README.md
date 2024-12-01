@@ -2,7 +2,7 @@
 
 ## About
 
-This Chrome extension is designed to assist users with proofreading tasks. It provides suggestions and corrections to improve the quality of written content directly within the browser.
+This Chrome extension is designed to assist users with proofreading tasks. It provides suggestions and corrections to improve the quality of written content directly within the browser. This extension is fully created by Aider.
 
 ## Features
 
