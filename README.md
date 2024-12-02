@@ -2,11 +2,10 @@
 
 ## About
 
-This Chrome extension is designed to assist users with proofreading tasks. It provides suggestions and corrections to improve the quality of written content directly within the browser. This extension is fully created by Aider.
+This Chrome extension is designed to assist users with proofreading tasks. It provides suggestions and corrections to improve the quality of written content directly within the browser. This extension is fully created by Aider. Prompts used to create this extension are in the promots.md file.
 
 ## Features
 
-- Real-time proofreading suggestions
 - Grammar and spelling checks
 - Contextual recommendations for better writing
 
@@ -43,7 +42,3 @@ Contributions are welcome! Please follow these steps:
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
-
-## Contact
-
-For any questions or support, please contact [your-email@example.com](mailto:your-email@example.com).
